@@ -1,0 +1,4 @@
+include ':autofirejapi'
+project(':autofirejapi').projectDir = new File('../autofirejapi')
+include ':autofirejavase'
+project(':autofirejavase').projectDir = new File('../autofirejavase')

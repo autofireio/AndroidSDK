@@ -1,0 +1,97 @@
+//
+// Build the Java SDKs:
+//   %./gradlew build
+// Install Java SDKs without executing device tests:
+//   %./gradlew install
+//
+// Choose the SDK to build and install:
+// - JavaSE SDK:
+//   %./gradlew :autofirejavase:build
+//   %./gradlew :autofirejavase:install
+// - Android SDK:
+//   %./gradlew :autofireandroid:build
+//   %./gradlew :autofireandroid:install
+//
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.1'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+    }
+}
+
+subprojects {
+    apply plugin: 'com.github.ben-manes.versions'
+
+    group = 'io.autofire.client'
+    version = '0.4-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+ext.libs = [
+        junit: "junit:junit:4.12"
+]
+
+project(':autofirejapi') {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+
+    sourceCompatibility = 1.6
+
+    dependencies {
+        testImplementation libs.junit
+    }
+}
+
+project(':autofirejavase') {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+
+    sourceCompatibility = 1.6
+
+    dependencies {
+        implementation project(':autofirejapi')
+        testImplementation libs.junit
+    }
+}
+
+project(':autofireandroid') {
+    apply plugin: 'com.android.library'
+    apply plugin: 'com.github.dcendents.android-maven'
+
+    android {
+        compileSdkVersion 26
+
+        defaultConfig {
+            minSdkVersion 14
+            targetSdkVersion 26
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation project(':autofirejapi')
+        testImplementation libs.junit
+    }
+}
