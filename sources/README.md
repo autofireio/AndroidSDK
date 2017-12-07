@@ -44,7 +44,7 @@ Java SDKs for Autofire
 
   * The Autofire Android SDK supports Android versions 4.0 (IceCreamSandwich - API 14) or higher.
 
-  * The Autofire cached and persisted files are stored in the host application's private storage space. The Autofire Player Id is stored in the device external storage if available or the host application's private storage space.
+  * The Autofire cached and persisted files are stored in the host application's SharedPreferences space.
 
   * Host applications should have the following permission in their `AndroidManifest.xml`
 
@@ -100,9 +100,11 @@ Java SDKs for Autofire
 ## Binary distribution
 </a>
 
-- The Autofire JavaSE SDK `.jar` file is located in the `autofirejavase/build/libs` directory.
+- The Autofire JAPI `.jar` file is located in the `autofirejapi/build/libs` directory
 
-- The Autofire Android SDK `.aar` files (debug and release) are located in the `autofireandroid/build/outputs/aar` directory.
+- The Autofire JavaSE SDK `.jar` file is located in the `autofirejavase/build/libs` directory. This file depends on the JAPI `.jar` file (see above).
+
+- The Autofire Android SDK `.aar` files (debug and release) are located in the `autofireandroid/build/output/aar` directory. The release version is recommended for production use. These files depend on the JAPI `.jar` file (see above).
 
   * The affore-mentioned `.aar` files are present if the Autofire SDK was built with Android support (i.e. the Android flavour)
 

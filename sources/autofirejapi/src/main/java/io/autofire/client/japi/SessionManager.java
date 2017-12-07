@@ -609,8 +609,10 @@ public class SessionManager {
     }
 
     private static synchronized void shutdownTasksCritical() {
-        if (isSetUp)
+        if (isSetUp) {
             taskFactory.shutdown();
+            isTaskFactoryInitialized.set(false);
+        }
     }
 
     public static void shutdown() {
