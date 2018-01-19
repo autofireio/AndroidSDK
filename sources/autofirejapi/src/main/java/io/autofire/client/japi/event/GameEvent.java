@@ -36,6 +36,8 @@ public abstract class GameEvent {
         return System.currentTimeMillis() / 1000L;
     }
 
+    // See:
+    //   https://www.javacodegeeks.com/2010/07/java-best-practices-dateformat-in.html
     public static String toISO8601String(long unixTime) {
         String result;
 
