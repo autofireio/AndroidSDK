@@ -37,9 +37,15 @@ public abstract class GameEvent {
     }
 
     public static String toISO8601String(long unixTime) {
+        String result;
+
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-        Date date = new Date(unixTime * 1000L);
-        return dateFormat.format(date);
+        synchronized (dateFormat) {
+            Date date = new Date(unixTime * 1000L);
+            result = dateFormat.format(date);
+        }
+
+        return result;
     }
 
     private static String onNonEmpty(String str) {
