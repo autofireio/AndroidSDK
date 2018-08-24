@@ -2,7 +2,7 @@
 
 # Autofire | Android SDK
 
-This is the Android SDK for the **Autofire** - Game Analytics service.
+This is the Android SDK for the **Autofire** - Game Optimization service.
 
 ## Get Started
 
