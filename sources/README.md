@@ -51,11 +51,11 @@ Java SDKs for Autofire
       `<uses-permission android:name="android.permission.INTERNET" />`
 
   - Host applications that want to use the device external storage should have the following permission in their `AndroidManifest.xml`
-    
+
       `<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />`
 
   - Host applications that want to be accurate on the availability of the internet connection should have the following permission in their `AndroidManifest.xml`
-    
+
       `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />`
 
 <a name="source-no-android">
@@ -100,16 +100,16 @@ Java SDKs for Autofire
 ## Binary distribution
 </a>
 
-- The Autofire JAPI `.jar` file is located in the `autofirejapi/build/libs` directory
+- The Autofire JAPI `.jar` file is located in the `autofirejapi/build/libs` directory. After `install`, the artifact is located in `~/.m2/repository/io/autofire/client/autofirejapi/VER`, where `VER` is the SDK version.
 
-- The Autofire JavaSE SDK `.jar` file is located in the `autofirejavase/build/libs` directory. This file depends on the JAPI `.jar` file (see above).
+- The Autofire JavaSE SDK `.jar` file is located in the `autofirejavase/build/libs` directory. After `install`, the release artifact is located in `~/.m2/repository/io/autofire/client/autofirejavase/VER`, where `VER` is the SDK version. This file depends on the JAPI `.jar` file (see above).
 
-- The Autofire Android SDK `.aar` files (debug and release) are located in the `autofireandroid/build/output/aar` directory. The release version is recommended for production use. These files depend on the JAPI `.jar` file (see above).
+- The Autofire Android SDK `.aar` files (debug and release) are located in the `autofireandroid/build/outputs/aar` directory. After `install`, the release artifact is located in `~/.m2/repository/io/autofire/client/autofireandroid/VER`, where `VER` is the SDK version. The release version is recommended for production use. These files depend on the JAPI `.jar` file (see above).
 
-  * The affore-mentioned `.aar` files are present if the Autofire SDK was built with Android support (i.e. the Android flavour)
+  * The affore-mentioned `.aar` files are present if the Autofire SDK was built with Android support (i.e. the Android flavour).
 
 Have fun!
 
 ---
 
-Copyright (c) 2017 Autofire - Game Analytics | <http://autofire.io>
+Copyright (c) 2018 Autofire - Game Optimization | <http://autofire.io>
