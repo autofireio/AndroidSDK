@@ -3,22 +3,22 @@ package io.autofire.client.japi.event;
 public class Monetize extends GameEvent {
     public static final String MONETIZE_NAME = "MONETIZE";
 
-    private String item;
+    private String monetizeName;
     private int ac;
     private int qty;
 
-    public Monetize(String item, int ac, int qty) {
+    public Monetize(String name, int ac, int qty) {
         super(MONETIZE_NAME);
-        this.item = item;
+        this.monetizeName = name;
         this.ac = ac;
         this.qty = qty;
-        withPredefinedFeature("name", item);
+        withPredefinedFeature("name", name);
         withPredefinedFeature("ac", ac);
         withPredefinedFeature("qty", qty);
     }
 
-    public String getItem() {
-        return item;
+    public String getName() {
+        return monetizeName;
     }
 
     public int getAc() {
