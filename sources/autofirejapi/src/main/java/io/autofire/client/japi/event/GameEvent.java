@@ -14,7 +14,6 @@ public abstract class GameEvent {
 
     private static final char SEPARATOR = '/';
     private static final char ASSIGNMENT = '=';
-    private static final char TAB = '\t';
     private static final int MAX_NAME_LEN = 32;
     private static final int MAX_KEY_LEN = 64;
     private static final int MAX_NOMINAL_VALUE_LEN = 64;
@@ -65,11 +64,12 @@ public abstract class GameEvent {
     }
 
     private static String sanitize(String str, int len) {
-        str = str.replaceAll("[^\u0020-\u007F]+", "");
-        return onNonEmpty(left(str.trim(), len))
-                .replace(SEPARATOR, '_')
-                .replace(ASSIGNMENT, '_')
-                .replace(TAB, ' ');
+        if (str == null)
+            return EMPTY_STRING;
+
+        str = str.replaceAll("[" + SEPARATOR + ASSIGNMENT + "[^\u0020-\u007E]]+",
+                "");
+        return onNonEmpty(left(str.trim(), len));
     }
 
     public static String sanitizeName(String name) {
