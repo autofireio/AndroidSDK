@@ -1,4 +1,4 @@
-![Autofire logo](http://autofire.io/img/logo_ext.png)
+![Autofire logo](https://autofire.io/img/logo_ext.png)
 
 # Autofire | Android SDK
 
