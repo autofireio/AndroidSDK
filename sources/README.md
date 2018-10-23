@@ -1,6 +1,6 @@
-![Autofire logo](http://autofire.io/wp-content/themes/autofire/img/logo_ext.png)
+![Autofire logo](http://autofire.io/img/logo_ext.png)
 
-#Autofire Java SDKs
+# Autofire Java SDKs
 
 ---
 
