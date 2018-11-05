@@ -1,5 +1,3 @@
-![Autofire logo](http://autofire.io/img/logo_ext.png)
-
 # Autofire | Android SDK
 
 This is the Android SDK for the **Autofire** - Game Optimization service.
